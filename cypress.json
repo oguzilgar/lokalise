@@ -1,0 +1,25 @@
+{
+    "env": {
+      "environment": "stage",
+      "stage": {
+        "baseUrl": "https://app.stage.lokalise.cloud/"
+      },
+      "live": {
+        "baseUrl": "https://lokalise.com/"
+      }
+    },
+    "retries": {
+      "runMode": 1,
+      "openMode": 0
+    },
+    "integrationFolder": "cypress/",
+    "projectId": "5bee4f",
+    "requestTimeout": 10000,
+    "defaultTimeout": 5000,
+    "pageLoadTimeout": 20000,
+    "testFiles": "**/*.spec.js",
+    "video": true,
+    "videoCompression": 32,
+    "viewportWidth": 1280,
+    "viewportHeight": 800
+  }
