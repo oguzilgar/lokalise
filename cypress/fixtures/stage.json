@@ -1,8 +1,50 @@
 {
   "signin": {
     "user_1": {
-      "testEmail": "ouz1571@gmail.com",
-      "testPassword": "Lokalise"
+      "testEmailLength": 8,
+      "testPasswordLength": 8
     }
-  }
+  },
+  "companySizeOptions": {
+    "value_1": "Self-employed",
+    "value_2": "2-10 employees",
+    "value_3": "11-50 employees",
+    "value_4": "51-200 employees",
+    "value_5": "201-500 employees",
+    "value_6": "501-1,000 employees",
+    "value_7": "1,001-5,000 employees",
+    "value_8": "5,001-10,000 employees",
+    "value_9": "10,001+ employees"
+  },
+  "workTypes": [
+    "Software engineer",
+    "Product manager",
+    "Localization manager",
+    "Designer",
+    "Translator",
+    "Content writer",
+    "Student",
+    "Other"
+  ],
+  "mainGoalWithLokalise": [
+    "Start localization from scratch",
+    "Automate time-consuming tasks",
+    "Streamline localization workflows",
+    "Improve translation quality and consistency",
+    "Other"
+  ]
+  ,
+  "contentTypes": [
+    "Code repository",
+    "Files",
+    "Other",
+    "I don’t have any content yet"
+  ]
+  ,
+  "targetLanguages": [
+    "English",
+    "Turkish",
+    "Arabic",
+    "Spanish"
+  ]
 }
