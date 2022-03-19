@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "lokalise Take Home Assignment",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "faker": "^6.6.6",
+    "unique-names-generator": "^4.7.1"
+  },
   "devDependencies": {
     "cypress": "^9.5.2",
     "eslint": "^8.11.0",
