@@ -1,4 +1,4 @@
-import { uniqueNamesGenerator, colors, animals, languages } from 'unique-names-generator';
+import { uniqueNamesGenerator, colors, animals, starWars } from 'unique-names-generator';
 
 
  export const SignUpEmail = (length) => {
@@ -33,4 +33,9 @@ import { uniqueNamesGenerator, colors, animals, languages } from 'unique-names-g
    const signUpLastCompanyName = uniqueNamesGenerator({ dictionaries: [colors] });
    const signUpCompanyFullName = signUpFirstCompanyName + ` ` + signUpLastCompanyName;
     return signUpCompanyFullName ;
+ };
+
+ export const userProjectName = () => {
+   const userProjectName = uniqueNamesGenerator({ dictionaries: [starWars] });
+    return userProjectName ;
  };

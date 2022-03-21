@@ -34,7 +34,7 @@ class QuickStartPage {
       .contains(`Quick start`)
       .next()
       .click();
-    cy.task(`log`, `close dialog is clicked`);//scarlet scarlet’s first project
+    cy.task(`log`, `close dialog is clicked`);
   }
 
   static is_projectName_displayed(userFullName) {
@@ -42,6 +42,7 @@ class QuickStartPage {
       .contains(`Projects`)
       .next()
       .contains(`${userFullName}’s first project`)
+      .should(`be.visible`);
     cy.task(`log`, `${userFullName}’s first project is displayed`);
   }
 }
