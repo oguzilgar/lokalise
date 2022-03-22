@@ -98,5 +98,14 @@ class ProjectsPage {
       .should(`be.visible`);
     cy.task(`log`, `Project name is clicked`);
   }
+
+  static is_first_project_has_keyValue(keyValue) {
+    cy.get(`.sc-dkuGKe`)
+      .contains(`Keys`)
+      .next()
+      .contains(`${keyValue}`)
+      .should(`be.visible`);
+    cy.task(`log`, `key value is displayed as ${keyValue}`);
+  }
 }
 export default ProjectsPage;

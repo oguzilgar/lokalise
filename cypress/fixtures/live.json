@@ -1,8 +1,59 @@
 {
   "signin": {
-    "user_1": {
+    "user_signUp": {
       "testEmailLength": 8,
       "testPasswordLength": 8
+    },
+    "user_1": {
+      "testEmail": "test6@gmail.com",
+      "testPassword": "Lokalise",
+      "testEmailLength": 8,
+      "testPasswordLength": 8
+    },
+    "user_2": {
+      "testEmail": "test5@gmail.com",
+      "testPassword": "Lokalise",
+      "projectList": [
+        "Test"
+      ],
+      "keyName": "Lokalise",
+      "platform": "Android"
+    },
+    "user_3": {
+      "testEmail": "test1@gmail.com",
+      "testPassword": "Lokalise",
+      "projectList": [
+        "oguz ilgar’s first project"
+      ],
+      "keyName": "Greeting",
+      "projectBaseLanguage": "English",
+      "projectTargetLanguage": "Spanish",
+      "keyValueList": [
+        "H",
+        "Ñ"
+      ]
+    },
+    "user_4": {
+      "testEmail": "test2@gmail.com",
+      "testPassword": "Lokalise",
+      "keyName": "Plural key 01",
+      "projectBaseLanguage": "English",
+      "projectTargetLanguage": "Spanish",
+      "projectList": [
+        "Plural key project"
+      ],
+      "plurallabelList": [
+        "ONE",
+        "OTHER",
+        "ONE",
+        "OTHER"
+      ],
+      "pluralKeyValueList": [
+        "Ñ",
+        "X",
+        "Ç",
+        "$"
+      ]
     }
   },
   "companySizeOptions": {
@@ -32,19 +83,20 @@
     "Streamline localization workflows",
     "Improve translation quality and consistency",
     "Other"
-  ]
-  ,
+  ],
   "contentTypes": [
     "Code repository",
     "Files",
     "Other",
     "I don’t have any content yet"
-  ]
-  ,
+  ],
   "targetLanguages": [
     "English",
     "Turkish",
     "Arabic",
     "Spanish"
+  ],
+  "projectList": [
+    "test 4"
   ]
 }
