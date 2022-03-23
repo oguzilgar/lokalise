@@ -16,7 +16,7 @@
     "projectId": "5bee4f",
     "requestTimeout": 10000,
     "defaultTimeout": 5000,
-    "pageLoadTimeout": 10000,
+    "pageLoadTimeout": 20000,
     "testFiles": "**/*.spec.js",
     "video": true,
     "videoCompression": 32,

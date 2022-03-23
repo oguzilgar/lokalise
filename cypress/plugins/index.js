@@ -18,12 +18,11 @@
 // eslint-disable-next-line no-unused-vars
 //index.js
 
-module.exports = (on, config) => {
-
-  on('task', {
+module.exports = (on) => {
+  on("task", {
     log(message) {
       console.log("Log", "The user action: " + message);
-      return null
+      return null;
     },
-  })
-}
+  });
+};

@@ -29,8 +29,8 @@
       "projectBaseLanguage": "English",
       "projectTargetLanguage": "Spanish",
       "keyValueList": [
-        "H",
-        "Ñ"
+        "Hey",
+        "Hola"
       ]
     },
     "user_4": {
@@ -49,10 +49,10 @@
         "OTHER"
       ],
       "pluralKeyValueList": [
-        "Ñ",
-        "X",
-        "Ç",
-        "$"
+        "Hey",
+        "Hola",
+        "By",
+        "Adios"
       ]
     }
   },

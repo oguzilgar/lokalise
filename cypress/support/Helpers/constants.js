@@ -1,3 +1,4 @@
 export const TIMEOUTS = {
-    WAIT_LOAD: 500
-  };
+  WAIT_LOAD: 500,
+  WAIT_ENDPOINT: 15000,
+};

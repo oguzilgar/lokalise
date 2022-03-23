@@ -12,13 +12,11 @@ import {
   SignUpFullName,
   SignUpPassword,
   userCompanyName,
-  userProjectName
+  userProjectName,
 } from "../../support/Helpers/index";
 
 const environment = Cypress.env(`environment`);
-const {
-  baseUrl: baseUrlEnv
-} = Cypress.env()[environment];
+const { baseUrl: baseUrlEnv } = Cypress.env()[environment];
 
 describe(`Take Home Assignment`, () => {
   before(() => {
@@ -53,7 +51,8 @@ describe(`Take Home Assignment`, () => {
     cy.signUp_with_email_and_password(
       userFullName,
       SignUpEmail(user.signin.user_signUp.testEmailLength),
-      SignUpPassword(user.signin.user_signUp.testPasswordLength));
+      SignUpPassword(user.signin.user_signUp.testPasswordLength)
+    );
 
     cy.is_page_loaded_successfully(`welcome`);
     WelcomePage.is_welcome_page_displayed_successfully();
@@ -84,7 +83,9 @@ describe(`Take Home Assignment`, () => {
     QuickStartPage.click_create_sample_project();
 
     CreateTranslationProjectPage.is_create_translation_project_popup_displayed();
-    CreateTranslationProjectPage.is_projectName_filled_containing_userName(userFullName);
+    CreateTranslationProjectPage.is_projectName_filled_containing_userName(
+      userFullName
+    );
     cy.type_target_language(user.targetLanguages[2]);
     cy.click_proceed_button();
     QuickStartPage.is_quick_start_step_1_completed();
@@ -104,7 +105,10 @@ describe(`Take Home Assignment`, () => {
     const projectName = userProjectName();
 
     LoginPage.is_loginPage_displayed_successfully();
-    cy.login_with_email_and_password(user.signin.user_1.testEmail, user.signin.user_1.testPassword);
+    cy.login_with_email_and_password(
+      user.signin.user_1.testEmail,
+      user.signin.user_1.testPassword
+    );
     cy.is_loggedIn_successfully(`login`);
 
     ProjectsPage.is_only_one_project_exist();
@@ -153,7 +157,10 @@ describe(`Take Home Assignment`, () => {
     cy.task(`log`, `${environment}.json`);
 
     LoginPage.is_loginPage_displayed_successfully();
-    cy.login_with_email_and_password(user.signin.user_2.testEmail, user.signin.user_2.testPassword);
+    cy.login_with_email_and_password(
+      user.signin.user_2.testEmail,
+      user.signin.user_2.testPassword
+    );
     cy.is_loggedIn_successfully(`login`);
 
     ProjectsPage.is_only_one_project_exist();
@@ -161,7 +168,9 @@ describe(`Take Home Assignment`, () => {
     ProjectsPage.click_project_title(user.signin.user_2.projectList[0]);
 
     cy.is_page_loaded_successfully(`view=multi`);
-    cy.is_projectName_displayed_on_editorPage(user.signin.user_2.projectList[0]);
+    cy.is_projectName_displayed_on_editorPage(
+      user.signin.user_2.projectList[0]
+    );
     EditorPage.is_editorPage_displayed();
     EditorPage.is_addKey_button_displayed();
     EditorPage.click_addKey_button();
@@ -184,7 +193,9 @@ describe(`Take Home Assignment`, () => {
     EditorPage.click_delete_key_button();
     EditorPage.is_delete_key_popUp_displayed(user.signin.user_2.keyName);
     EditorPage.click_delete_key_button_on_popUp();
-    cy.is_projectName_displayed_on_editorPage(user.signin.user_2.projectList[0]);
+    cy.is_projectName_displayed_on_editorPage(
+      user.signin.user_2.projectList[0]
+    );
     EditorPage.is_editorPage_displayed();
     EditorPage.is_addKey_button_displayed();
   });
@@ -193,7 +204,10 @@ describe(`Take Home Assignment`, () => {
     cy.task(`log`, `${environment}.json`);
 
     LoginPage.is_loginPage_displayed_successfully();
-    cy.login_with_email_and_password(user.signin.user_3.testEmail, user.signin.user_3.testPassword);
+    cy.login_with_email_and_password(
+      user.signin.user_3.testEmail,
+      user.signin.user_3.testPassword
+    );
     cy.is_loggedIn_successfully(`login`);
 
     ProjectsPage.is_only_one_project_exist();
@@ -201,25 +215,43 @@ describe(`Take Home Assignment`, () => {
     ProjectsPage.click_project_title(user.signin.user_3.projectList[0]);
 
     cy.is_page_loaded_successfully(`view=multi`);
-    cy.is_projectName_displayed_on_editorPage(user.signin.user_3.projectList[0]);
+    cy.is_projectName_displayed_on_editorPage(
+      user.signin.user_3.projectList[0]
+    );
     EditorPage.is_count_of_key_correct_as_one(user.signin.user_3.keyName);
     EditorPage.is_base_words_count_of(0);
-    EditorPage.is_project_base_language_displayed(user.signin.user_3.keyName, user.signin.user_3.projectBaseLanguage);
-    EditorPage.is_project_target_language_displayed(user.signin.user_3.keyName, user.signin.user_3.projectTargetLanguage);
+    EditorPage.is_project_base_language_displayed(
+      user.signin.user_3.keyName,
+      user.signin.user_3.projectBaseLanguage
+    );
+    EditorPage.is_project_target_language_displayed(
+      user.signin.user_3.keyName,
+      user.signin.user_3.projectTargetLanguage
+    );
     EditorPage.is_the_key_empty(user.signin.user_3.keyName);
 
     for (let i = 0; i < user.signin.user_3.keyValueList.length; i++) {
       EditorPage.click_empty_text_with_indexOf(0, user.signin.user_3.keyName);
-      EditorPage.type_translation_for_base_language(user.signin.user_3.keyName, user.signin.user_3.keyValueList[i]);
+      EditorPage.type_translation_for_base_language(
+        user.signin.user_3.keyName,
+        user.signin.user_3.keyValueList[i]
+      );
       EditorPage.click_to_save_translation();
-      EditorPage.is_typed_translation_displayed(user.signin.user_3.keyValueList[i]);
+      EditorPage.is_typed_translation_displayed(
+        user.signin.user_3.keyValueList[i]
+      );
     }
     EditorPage.is_base_words_count_of(1);
 
     //Delete
     for (let i = 0; i < user.signin.user_3.keyValueList.length; i++) {
-      EditorPage.is_typed_translation_displayed(user.signin.user_3.keyValueList[i]);
-      EditorPage.click_base_language_value(user.signin.user_3.keyName, user.signin.user_3.keyValueList[i]);
+      EditorPage.is_typed_translation_displayed(
+        user.signin.user_3.keyValueList[i]
+      );
+      EditorPage.click_base_language_value(
+        user.signin.user_3.keyName,
+        user.signin.user_3.keyValueList[i]
+      );
       EditorPage.clear_translation(user.signin.user_3.keyName);
       EditorPage.click_to_save_translation();
       EditorPage.is_the_key_empty_indexOf(0, user.signin.user_3.keyName);
@@ -233,7 +265,10 @@ describe(`Take Home Assignment`, () => {
     cy.task(`log`, `${environment}.json`);
 
     LoginPage.is_loginPage_displayed_successfully();
-    cy.login_with_email_and_password(user.signin.user_4.testEmail, user.signin.user_4.testPassword);
+    cy.login_with_email_and_password(
+      user.signin.user_4.testEmail,
+      user.signin.user_4.testPassword
+    );
     cy.is_loggedIn_successfully(`login`);
 
     ProjectsPage.is_only_one_project_exist();
@@ -241,29 +276,49 @@ describe(`Take Home Assignment`, () => {
     ProjectsPage.click_project_title(user.signin.user_4.projectList[0]);
 
     cy.is_page_loaded_successfully(`view=multi`);
-    cy.is_projectName_displayed_on_editorPage(user.signin.user_4.projectList[0]);
+    cy.is_projectName_displayed_on_editorPage(
+      user.signin.user_4.projectList[0]
+    );
     EditorPage.is_count_of_key_correct_as_one(user.signin.user_4.keyName);
 
     EditorPage.is_plural_icon_displayed();
-    EditorPage.is_project_base_language_displayed(user.signin.user_4.keyName, user.signin.user_4.projectBaseLanguage);
-    EditorPage.is_project_target_language_displayed(user.signin.user_4.keyName, user.signin.user_4.projectTargetLanguage);
-    EditorPage.is_plural_key_fields_displayed(user.signin.user_4.keyName, user.signin.user_4.plurallabelList);
+    EditorPage.is_project_base_language_displayed(
+      user.signin.user_4.keyName,
+      user.signin.user_4.projectBaseLanguage
+    );
+    EditorPage.is_project_target_language_displayed(
+      user.signin.user_4.keyName,
+      user.signin.user_4.projectTargetLanguage
+    );
+    EditorPage.is_plural_key_fields_displayed(
+      user.signin.user_4.keyName,
+      user.signin.user_4.plurallabelList
+    );
     EditorPage.is_the_plural_key_empty(user.signin.user_4.keyName);
     EditorPage.is_base_words_count_of(0);
-
 
     for (let i = 0; i < user.signin.user_4.pluralKeyValueList.length; i++) {
       EditorPage.click_empty_text_with_indexOf(0, user.signin.user_4.keyName);
       EditorPage.is_plural_popUp_displayed();
-      EditorPage.type_plural_popUp_input(user.signin.user_4.pluralKeyValueList[i]);
+      EditorPage.type_plural_popUp_input(
+        user.signin.user_4.pluralKeyValueList[i]
+      );
       EditorPage.click_to_save_translation();
-      EditorPage.is_typed_translation_displayed(user.signin.user_4.pluralKeyValueList[i]);
+      EditorPage.is_typed_translation_displayed(
+        user.signin.user_4.pluralKeyValueList[i]
+      );
     }
     EditorPage.is_base_words_count_of(2);
 
     for (let i = 0; i < user.signin.user_4.pluralKeyValueList.length; i++) {
-      EditorPage.is_typed_translation_displayed(user.signin.user_4.pluralKeyValueList[i]);
-      EditorPage.click_base_language_value(user.signin.user_4.keyName, user.signin.user_4.pluralKeyValueList[i]);
+      EditorPage.is_typed_translation_displayed(
+        user.signin.user_4.pluralKeyValueList[i]
+      );
+      EditorPage.click_base_language_value(
+        user.signin.user_4.keyName,
+        user.signin.user_4.pluralKeyValueList[i]
+      );
+      cy.wait(500);
       EditorPage.clear_translation();
       EditorPage.click_to_save_translation();
       EditorPage.is_the_key_empty_indexOf(0, user.signin.user_4.keyName);
