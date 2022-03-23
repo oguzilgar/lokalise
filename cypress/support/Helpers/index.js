@@ -50,8 +50,3 @@ export const userProjectName = () => {
   const userProjectName = uniqueNamesGenerator({ dictionaries: [starWars] });
   return userProjectName;
 };
-
-export const type_a_word = () => {
-  const userProjectName = uniqueNamesGenerator({ dictionaries: [starWars] });
-  return userProjectName;
-};

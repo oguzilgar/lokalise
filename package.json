@@ -1,7 +1,7 @@
 {
   "name": "lokalise",
   "version": "1.0.0",
-  "description": "lokalise Take Home Assignment",
+  "description": "Lokalise Take Home Assignment",
   "main": "index.js",
   "dependencies": {
     "cypress-wait-until": "^1.7.2",

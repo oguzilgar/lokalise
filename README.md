@@ -42,8 +42,3 @@ Some Findings:
 
 - Plain key base language translation box doesnt upload,
 - Page loads take about 15 sec sometimes.
-
-
-Repository link:
-
-https://github.com/oguzilgar/lokalise
